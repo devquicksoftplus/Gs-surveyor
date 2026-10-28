@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MessageSquare, ArrowUp, Compass, ChevronRight } from 'lucide-react';
 import { COMPANY_DETAILS, SERVICES } from '../data/surveyData';
+import Logo from './Logo';
 
 export default function Footer({ onSelectServiceForEnquiry }) {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -37,9 +38,7 @@ export default function Footer({ onSelectServiceForEnquiry }) {
           {/* Col 1: Brand & Overview */}
           <div className="footer-col brand-col">
             <div className="footer-brand">
-              <div className="brand-monogram sm">
-                <span>GS</span>
-              </div>
+              <Logo size="sm" />
               <div className="brand-text">
                 <span className="brand-name">{COMPANY_DETAILS.name}</span>
                 <span className="brand-tag">Land Surveying &amp; Consultancy</span>

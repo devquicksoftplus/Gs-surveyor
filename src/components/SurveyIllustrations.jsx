@@ -2,13 +2,83 @@ import React from 'react';
 
 // Dedicated SVG vector illustrations for GS Surveyor's & Consultancy
 export function ServiceIllustration({ serviceId, className = "h-16 w-auto" }) {
-  const navy = "#102D50";
-  const gold = "#D7B56D";
-  const goldLight = "#F3DC9F";
-  const deepNavy = "#091B30";
+  const navy = "#244B3C"; // Primary Forest Green
+  const gold = "#B77B45"; // Bronze Accent
+  const goldLight = "#D49D6A"; // Light Bronze
+  const deepNavy = "#19362B"; // Deep Forest Green
 
   switch (serviceId) {
+    case 'govt-licensed-survey':
+    case 'govt-licensed-surveyor':
+      return (
+        <svg viewBox="0 0 160 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="80" cy="40" r="32" stroke={gold} strokeWidth="2.5" fill="rgba(183, 123, 69, 0.12)"/>
+          <circle cx="80" cy="40" r="26" stroke={navy} strokeWidth="1.2" strokeDasharray="3 2"/>
+          <polygon points="80,18 84,28 95,29 86,37 89,48 80,42 71,48 74,37 65,29 76,28" fill={gold}/>
+          <path d="M68 52L60 70L74 65L80 72L86 65L100 70L92 52" fill={navy} stroke={gold} strokeWidth="1"/>
+          <circle cx="80" cy="34" r="5" fill={deepNavy}/>
+          <line x1="20" y1="40" x2="48" y2="40" stroke={gold} strokeWidth="1.5" strokeDasharray="2 2"/>
+          <line x1="112" y1="40" x2="140" y2="40" stroke={gold} strokeWidth="1.5" strokeDasharray="2 2"/>
+          <text x="80" y="62" fill={deepNavy} fontSize="6" fontWeight="bold" textAnchor="middle" letterSpacing="0.8">LICENSED</text>
+        </svg>
+      );
+
+    case 'dtcp-approval':
+      return (
+        <svg viewBox="0 0 160 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="25" y="12" width="110" height="56" rx="4" fill="rgba(16, 45, 80, 0.04)" stroke={navy} strokeWidth="2"/>
+          <line x1="25" y1="36" x2="135" y2="36" stroke={gold} strokeWidth="2"/>
+          <line x1="75" y1="12" x2="75" y2="68" stroke={gold} strokeWidth="1.5" strokeDasharray="3 2"/>
+          <rect x="32" y="18" width="18" height="12" rx="2" fill="rgba(215, 181, 109, 0.2)" stroke={gold} strokeWidth="1"/>
+          <rect x="54" y="18" width="16" height="12" rx="2" fill="rgba(215, 181, 109, 0.2)" stroke={gold} strokeWidth="1"/>
+          <rect x="80" y="18" width="22" height="12" rx="2" fill="rgba(215, 181, 109, 0.2)" stroke={gold} strokeWidth="1"/>
+          <rect x="106" y="18" width="22" height="12" rx="2" fill="rgba(215, 181, 109, 0.2)" stroke={gold} strokeWidth="1"/>
+          <rect x="32" y="44" width="38" height="18" rx="2" fill="rgba(16, 45, 80, 0.08)" stroke={navy} strokeWidth="1"/>
+          <circle cx="116" cy="52" r="12" stroke={gold} strokeWidth="1.8" fill="rgba(215, 181, 109, 0.15)"/>
+          <path d="M111 52L115 56L122 48" stroke={gold} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <text x="51" y="55" fill={deepNavy} fontSize="7" fontWeight="bold">DTCP APPROVED</text>
+        </svg>
+      );
+
+    case 'building-approval':
+      return (
+        <svg viewBox="0 0 160 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 68V28L80 12L130 28V68H30Z" fill="rgba(215, 181, 109, 0.06)" stroke={navy} strokeWidth="2"/>
+          <line x1="80" y1="12" x2="80" y2="68" stroke={gold} strokeWidth="1.5" strokeDasharray="4 3"/>
+          <rect x="42" y="36" width="14" height="14" rx="2" stroke={gold} strokeWidth="1.5"/>
+          <rect x="64" y="36" width="12" height="14" rx="2" stroke={gold} strokeWidth="1.5"/>
+          <rect x="84" y="36" width="12" height="14" rx="2" stroke={gold} strokeWidth="1.5"/>
+          <rect x="104" y="36" width="14" height="14" rx="2" stroke={gold} strokeWidth="1.5"/>
+          <rect x="72" y="52" width="16" height="16" stroke={navy} strokeWidth="1.8" fill="rgba(16, 45, 80, 0.15)"/>
+          <circle cx="125" cy="22" r="10" stroke={gold} strokeWidth="1.5" fill="rgba(215, 181, 109, 0.2)"/>
+          <path d="M121 22L124 25L130 19" stroke={deepNavy} strokeWidth="1.8" strokeLinecap="round"/>
+          <line x1="20" y1="68" x2="140" y2="68" stroke={navy} strokeWidth="2.5"/>
+        </svg>
+      );
+
+    case 'second-third-plan':
+    case 'second-third-plan-approval':
+      return (
+        <svg viewBox="0 0 160 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Layer 1 */}
+          <rect x="25" y="24" width="90" height="48" rx="3" fill="rgba(16, 45, 80, 0.05)" stroke={navy} strokeWidth="1.5" strokeDasharray="3 2"/>
+          {/* Layer 2 */}
+          <rect x="35" y="18" width="90" height="48" rx="3" fill="rgba(215, 181, 109, 0.1)" stroke={gold} strokeWidth="1.8"/>
+          {/* Layer 3 */}
+          <rect x="45" y="12" width="90" height="48" rx="3" fill="#ffffff" stroke={navy} strokeWidth="2"/>
+          <line x1="55" y1="22" x2="105" y2="22" stroke={gold} strokeWidth="1.5"/>
+          <line x1="55" y1="28" x2="95" y2="28" stroke={navy} strokeWidth="1" opacity="0.6"/>
+          <line x1="55" y1="34" x2="115" y2="34" stroke={navy} strokeWidth="1" opacity="0.6"/>
+          <rect x="55" y="40" width="22" height="12" rx="2" stroke={gold} strokeWidth="1.2" fill="rgba(215, 181, 109, 0.15)"/>
+          <rect x="82" y="40" width="22" height="12" rx="2" stroke={gold} strokeWidth="1.2" fill="rgba(215, 181, 109, 0.15)"/>
+          <circle cx="124" cy="50" r="10" stroke={gold} strokeWidth="1.5" fill="rgba(215, 181, 109, 0.25)"/>
+          <path d="M120 50L123 53L128 47" stroke={deepNavy} strokeWidth="1.8" strokeLinecap="round"/>
+          <text x="108" y="22" fill={deepNavy} fontSize="7" fontWeight="bold">2nd &amp; 3rd</text>
+        </svg>
+      );
+
     case 'topographic-survey':
+    case 'topographic-surveying':
       return (
         <svg viewBox="0 0 160 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M10 65C35 45 60 70 95 40C125 15 140 30 150 20" stroke={gold} strokeWidth="2.5" strokeLinecap="round"/>
@@ -24,6 +94,7 @@ export function ServiceIllustration({ serviceId, className = "h-16 w-auto" }) {
       );
 
     case 'boundary-survey':
+    case 'boundary-demarcation':
       return (
         <svg viewBox="0 0 160 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
           <polygon points="30,20 130,15 145,65 15,60" fill="rgba(215, 181, 109, 0.08)" stroke={gold} strokeWidth="2.5" strokeDasharray="5 3"/>
@@ -55,6 +126,7 @@ export function ServiceIllustration({ serviceId, className = "h-16 w-auto" }) {
       );
 
     case 'setting-out-survey':
+    case 'land-surveying':
       return (
         <svg viewBox="0 0 160 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
           <line x1="20" y1="20" x2="140" y2="20" stroke={navy} strokeWidth="1.5" strokeDasharray="4 4"/>
@@ -73,6 +145,7 @@ export function ServiceIllustration({ serviceId, className = "h-16 w-auto" }) {
       );
 
     case 'drone-mapping':
+    case 'drone-surveying':
       return (
         <svg viewBox="0 0 160 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Drone */}
@@ -155,6 +228,7 @@ export function ServiceIllustration({ serviceId, className = "h-16 w-auto" }) {
       );
 
     case 'alignment-planning':
+    case 'civil-engineering':
       return (
         <svg viewBox="0 0 160 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M10 65C40 60 60 30 100 30C125 30 145 15 155 10" stroke={deepNavy} strokeWidth="9" strokeLinecap="round"/>

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
 import Services from './components/Services';
+import About from './components/About';
 import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
@@ -32,22 +32,22 @@ export default function App() {
       <Navbar onOpenEnquiry={() => handleOpenEnquiry('')} />
 
       <main>
-        {/* Hero Section */}
+        {/* Full-Width Automatic Image Slider Hero Section */}
         <Hero onOpenEnquiry={() => handleOpenEnquiry('')} />
 
-        {/* About Section */}
-        <About onOpenEnquiry={() => handleOpenEnquiry('')} />
-
-        {/* Services Section */}
+        {/* 9 Core Surveying & Approval Services */}
         <Services onSelectServiceForEnquiry={(s) => handleOpenEnquiry(s)} />
+
+        {/* About & Government Licensed Surveyor Credentials */}
+        <About onOpenEnquiry={() => handleOpenEnquiry('')} />
 
         {/* Gallery / Project Showcase */}
         <Gallery onSelectServiceForEnquiry={(s) => handleOpenEnquiry(s)} />
 
-        {/* Testimonials */}
+        {/* Client Testimonials */}
         <Testimonials />
 
-        {/* Contact & WhatsApp Enquiry Section */}
+        {/* Contact & Direct WhatsApp Enquiry */}
         <Contact 
           prefilledService={prefilledService} 
           onClearPrefilledService={handleClearPrefilled} 

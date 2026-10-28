@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Menu, X, MessageSquare, Compass } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data/surveyData';
+import Logo from './Logo';
 
 export default function Navbar({ onOpenEnquiry }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,17 +58,7 @@ export default function Navbar({ onOpenEnquiry }) {
       <nav className="container navbar-container">
         {/* Brand Monogram & Name */}
         <a href="#home" className="navbar-brand" onClick={(e) => handleLinkClick(e, '#home')}>
-          <div className="brand-monogram">
-            <svg viewBox="0 0 40 40" className="brand-svg">
-              <circle cx="20" cy="20" r="18" fill="none" stroke="#D7B56D" strokeWidth="1.8" strokeDasharray="3 2" />
-              <circle cx="20" cy="20" r="13" fill="none" stroke="#D7B56D" strokeWidth="1" opacity="0.6" />
-              <line x1="20" y1="2" x2="20" y2="7" stroke="#D7B56D" strokeWidth="1.5" />
-              <line x1="20" y1="33" x2="20" y2="38" stroke="#D7B56D" strokeWidth="1.5" />
-              <line x1="2" y1="20" x2="7" y2="20" stroke="#D7B56D" strokeWidth="1.5" />
-              <line x1="33" y1="20" x2="38" y2="20" stroke="#D7B56D" strokeWidth="1.5" />
-              <text x="20" y="24" fill="#D7B56D" fontSize="11" fontWeight="800" textAnchor="middle" letterSpacing="0.5">GS</text>
-            </svg>
-          </div>
+          <Logo size="md" />
           <div className="brand-text-block">
             <span className="brand-title">GS Surveyor's</span>
             <span className="brand-subtitle">&amp; Consultancy</span>
@@ -130,9 +121,7 @@ export default function Navbar({ onOpenEnquiry }) {
         <div className="mobile-drawer-overlay" onClick={() => setMobileMenuOpen(false)}>
           <div className="mobile-drawer" onClick={(e) => e.stopPropagation()}>
             <div className="mobile-drawer-header">
-              <div className="brand-monogram sm">
-                <span>GS</span>
-              </div>
+              <Logo size="sm" />
               <span className="drawer-title">GS Surveyor's &amp; Consultancy</span>
               <button 
                 type="button" 

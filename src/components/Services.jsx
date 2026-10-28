@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { 
   Map, Square, Home, Target, Plane, Network, 
   Compass, Grid, Radio, TrendingUp, Layers, Layers3, 
-  MessageSquare, ChevronRight, CheckCircle2 
+  MessageSquare, ChevronRight, CheckCircle2,
+  FileCheck2, Building2, Award, ShieldCheck
 } from 'lucide-react';
 import { SERVICES, COMPANY_DETAILS } from '../data/surveyData';
 import { ServiceIllustration } from './SurveyIllustrations';
@@ -11,14 +12,18 @@ export default function Services({ onSelectServiceForEnquiry }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeModalService, setActiveModalService] = useState(null);
 
-  const categories = ['All', 'Land Survey', 'Cadastral', 'Engineering', 'Aerial & DGPS', 'Construction'];
+  const categories = ['All', 'Approvals', 'Land Survey', 'Cadastral', 'Engineering', 'Aerial & DGPS', 'Construction'];
 
   const filteredServices = selectedCategory === 'All' 
     ? SERVICES 
-    : SERVICES.filter(s => s.category === selectedCategory || (selectedCategory === 'Engineering' && (s.category === 'Engineering' || s.category === 'Geodetic' || s.category === 'Architecture')));
+    : SERVICES.filter(s => s.category === selectedCategory || (selectedCategory === 'Approvals' && s.category === 'Approvals') || (selectedCategory === 'Engineering' && (s.category === 'Engineering' || s.category === 'Geodetic' || s.category === 'Architecture')));
 
   const getServiceIcon = (iconName) => {
     switch (iconName) {
+      case 'FileCheck2': return FileCheck2;
+      case 'Building2': return Building2;
+      case 'Award': return Award;
+      case 'ShieldCheck': return ShieldCheck;
       case 'Map': return Map;
       case 'Square': return Square;
       case 'Home': return Home;

@@ -1,26 +1,48 @@
 :root {
-  --primary-navy: #102D50;
-  --deep-navy: #091B30;
-  --navy-surface: #14365d;
-  --navy-border: #1d4677;
-  --navy-tint: #e9eef5;
-  --gold-accent: #D7B56D;
-  --gold-light: #F0D79B;
-  --gold-dark: #B89243;
-  --gold-gradient: linear-gradient(135deg, #F3DC9F 0%, #D7B56D 50%, #B89243 100%);
-  --navy-gradient: linear-gradient(145deg, #091B30 0%, #102D50 50%, #0c233f 100%);
+  /* ==========================================================================
+     NEW COLOR THEME: Forest Green, Ivory, Bronze, White, Dark Text
+     ========================================================================== */
+  --primary-forest: #244B3C;
+  --forest-dark: #19362B;
+  --forest-light: #2E5E4C;
+  --forest-surface: #E8EFEA;
+  --forest-border: rgba(36, 75, 60, 0.2);
+  --ivory-bg: #F7F4EA;
+  --bronze-accent: #B77B45;
+  --bronze-light: #D49D6A;
+  --bronze-dark: #966233;
   --white: #FFFFFF;
-  --light-bg: #F5F7FA;
-  --card-bg: #FFFFFF;
-  --text-main: #263445;
-  --text-muted: #64748B;
-  --text-light: #94A3B8;
+  --dark-text: #29332E;
+  --light-section-bg: #F0EEE5;
+  --text-muted: #5C6B63;
+  --text-light: #7E8D85;
   --text-white: #F8FAFC;
-  --border-light: #E2E8F0;
-  --shadow-sm: 0 2px 8px rgba(16, 45, 80, 0.06);
-  --shadow-md: 0 8px 24px rgba(16, 45, 80, 0.08);
-  --shadow-lg: 0 16px 36px rgba(16, 45, 80, 0.12);
-  --shadow-gold: 0 8px 25px rgba(215, 181, 109, 0.28);
+  --border-light: #DDD8CB;
+
+  /* Semantic Theme Mappings (Replaces all blue/navy with Forest Green, gold with Bronze) */
+  --primary-navy: var(--primary-forest);
+  --deep-navy: var(--forest-dark);
+  --navy-surface: #1E3F33;
+  --navy-border: rgba(183, 123, 69, 0.25);
+  --navy-tint: #E8EFEA;
+  --gold-accent: var(--bronze-accent);
+  --gold-light: var(--bronze-light);
+  --gold-dark: var(--bronze-dark);
+  --gold-gradient: linear-gradient(135deg, #D49D6A 0%, #B77B45 50%, #966233 100%);
+  --bronze-gradient: linear-gradient(135deg, #D49D6A 0%, #B77B45 50%, #966233 100%);
+  --navy-gradient: linear-gradient(145deg, #19362B 0%, #244B3C 50%, #2E5E4C 100%);
+  --forest-gradient: linear-gradient(145deg, #19362B 0%, #244B3C 50%, #2E5E4C 100%);
+  --light-bg: var(--ivory-bg);
+  --card-bg: var(--white);
+  --text-main: var(--dark-text);
+
+  /* Shadows & Radius */
+  --shadow-sm: 0 2px 8px rgba(36, 75, 60, 0.06);
+  --shadow-md: 0 8px 24px rgba(36, 75, 60, 0.08);
+  --shadow-lg: 0 16px 36px rgba(36, 75, 60, 0.12);
+  --shadow-gold: 0 8px 25px rgba(183, 123, 69, 0.28);
+  --shadow-bronze: 0 8px 25px rgba(183, 123, 69, 0.28);
+  --shadow-forest: 0 8px 24px rgba(36, 75, 60, 0.3);
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -40,19 +62,21 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-body);
-  color: var(--text-main);
-  background-color: var(--white);
+  color: var(--dark-text);
+  background-color: var(--ivory-bg);
   -webkit-font-smoothing: antialiased;
 }
 
 body {
   overflow-x: hidden;
   line-height: 1.6;
+  background-color: var(--ivory-bg);
+  color: var(--dark-text);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--deep-navy);
+  color: var(--primary-forest);
   font-weight: 700;
   line-height: 1.25;
 }
@@ -97,9 +121,9 @@ img {
   gap: 8px;
   padding: 6px 16px;
   border-radius: var(--radius-full);
-  background: rgba(215, 181, 109, 0.12);
-  border: 1px solid rgba(215, 181, 109, 0.35);
-  color: #a47d2f;
+  background: rgba(183, 123, 69, 0.12);
+  border: 1px solid rgba(183, 123, 69, 0.35);
+  color: var(--bronze-dark);
   font-family: var(--font-heading);
   font-size: 0.825rem;
   font-weight: 700;
@@ -108,16 +132,22 @@ img {
   margin-bottom: 12px;
 }
 
+.section-badge.badge-forest {
+  background: rgba(36, 75, 60, 0.08);
+  border-color: rgba(36, 75, 60, 0.2);
+  color: var(--primary-forest);
+}
+
 .section-badge.badge-navy {
-  background: rgba(16, 45, 80, 0.08);
-  border-color: rgba(16, 45, 80, 0.2);
-  color: var(--primary-navy);
+  background: rgba(36, 75, 60, 0.08);
+  border-color: rgba(36, 75, 60, 0.2);
+  color: var(--primary-forest);
 }
 
 .section-badge.badge-white {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(215, 181, 109, 0.4);
-  color: var(--gold-light);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(183, 123, 69, 0.4);
+  color: var(--ivory-bg);
 }
 
 .section-header {
@@ -133,6 +163,7 @@ img {
   font-size: clamp(2rem, 3.8vw, 2.75rem);
   letter-spacing: -0.02em;
   margin-bottom: 16px;
+  color: var(--primary-forest);
 }
 
 .section-title.text-white {
@@ -147,13 +178,13 @@ img {
 }
 
 .section-subtitle.text-white {
-  color: #cbd5e1;
+  color: #DDE5E0;
 }
 
 .gold-divider {
   width: 64px;
   height: 3px;
-  background: var(--gold-gradient);
+  background: var(--bronze-gradient);
   margin: 14px auto 0;
   border-radius: var(--radius-full);
 }
@@ -178,52 +209,80 @@ img {
   white-space: nowrap;
 }
 
-.btn-gold {
-  background: var(--gold-gradient);
-  color: var(--deep-navy);
-  box-shadow: var(--shadow-gold);
-}
-
-.btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(215, 181, 109, 0.4);
-  filter: brightness(1.05);
-}
-
-.btn-navy {
-  background: var(--primary-navy);
+/* Primary Forest Green Button */
+.btn-forest, .btn-primary {
+  background: var(--primary-forest);
   color: var(--white);
-  box-shadow: 0 4px 16px rgba(16, 45, 80, 0.2);
+  box-shadow: 0 4px 16px rgba(36, 75, 60, 0.25);
+}
+
+.btn-forest:hover, .btn-primary:hover {
+  background: var(--forest-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(36, 75, 60, 0.35);
+}
+
+/* Bronze Button */
+.btn-bronze, .btn-gold {
+  background: var(--bronze-gradient);
+  color: var(--white);
+  box-shadow: var(--shadow-bronze);
+}
+
+.btn-bronze:hover, .btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(183, 123, 69, 0.4);
+  filter: brightness(1.08);
+}
+
+/* Forest Navy Legacy Class */
+.btn-navy {
+  background: var(--primary-forest);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(36, 75, 60, 0.2);
 }
 
 .btn-navy:hover {
-  background: var(--deep-navy);
+  background: var(--forest-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(9, 27, 48, 0.3);
+  box-shadow: 0 8px 24px rgba(25, 54, 43, 0.3);
 }
 
-.btn-outline-gold {
+/* Secondary Buttons */
+.btn-outline-forest, .btn-outline-navy {
   background: transparent;
-  color: var(--gold-accent);
-  border: 1.5px solid var(--gold-accent);
+  color: var(--primary-forest);
+  border: 1.5px solid var(--primary-forest);
 }
 
-.btn-outline-gold:hover {
-  background: rgba(215, 181, 109, 0.15);
-  color: var(--gold-light);
-  border-color: var(--gold-light);
-  transform: translateY(-2px);
-}
-
-.btn-outline-navy {
-  background: transparent;
-  color: var(--primary-navy);
-  border: 1.5px solid var(--primary-navy);
-}
-
-.btn-outline-navy:hover {
-  background: var(--primary-navy);
+.btn-outline-forest:hover, .btn-outline-navy:hover {
+  background: var(--primary-forest);
   color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-bronze, .btn-outline-gold {
+  background: transparent;
+  color: var(--bronze-accent);
+  border: 1.5px solid var(--bronze-accent);
+}
+
+.btn-outline-bronze:hover, .btn-outline-gold:hover {
+  background: rgba(183, 123, 69, 0.12);
+  color: var(--bronze-dark);
+  border-color: var(--bronze-dark);
+  transform: translateY(-2px);
+}
+
+.btn-ivory {
+  background: var(--ivory-bg);
+  color: var(--primary-forest);
+  border: 1.5px solid var(--border-light);
+}
+
+.btn-ivory:hover {
+  background: var(--white);
+  border-color: var(--primary-forest);
   transform: translateY(-2px);
 }
 
@@ -246,7 +305,7 @@ img {
 
 /* Animations */
 @keyframes pulseSubtle {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
+  0%, 100% { transform: scale(1); opacity: 0.85; }
   50% { transform: scale(1.06); opacity: 1; }
 }
 
@@ -271,14 +330,14 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: var(--ivory-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: var(--border-light);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold-accent);
+  background: var(--bronze-accent);
 }

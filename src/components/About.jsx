@@ -48,7 +48,25 @@ export default function About({ onOpenEnquiry }) {
                   <Check className="w-4 h-4 text-gold" />
                 </div>
                 <div>
+                  <strong>Professional Credential:</strong> Government Licensed Surveyor
+                </div>
+              </div>
+
+              <div className="highlight-row">
+                <div className="highlight-check">
+                  <Check className="w-4 h-4 text-gold" />
+                </div>
+                <div>
                   <strong>Owner &amp; Principal Consultant:</strong> {COMPANY_DETAILS.owner}
+                </div>
+              </div>
+
+              <div className="highlight-row">
+                <div className="highlight-check">
+                  <Check className="w-4 h-4 text-gold" />
+                </div>
+                <div>
+                  <strong>Statutory Services:</strong> DTCP Approvals, Building Approvals &amp; 2nd/3rd Plan Services
                 </div>
               </div>
 
